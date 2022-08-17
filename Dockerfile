@@ -1,4 +1,4 @@
-FROM centos:7.9.2009
+FROM centos:7
 
 ENV container docker
 
@@ -42,5 +42,11 @@ STOPSIGNAL SIGRTMIN+3
 
 # something is creating and leaving a nologin file lying around prventing sshd from accepting login attempts
 # System is booting up. See pam_nologin(8)
+ADD ./enable-login.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/enable-login.sh
+ADD ./enable-login.service /etc/systemd/system/
+ADD ./init.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/init.sh
 
-CMD ["/usr/sbin/init"]
+CMD ["/usr/local/bin/init.sh"]
+# CMD ["/usr/sbin/init"]

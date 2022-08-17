@@ -1,0 +1,17 @@
+[Unit]
+Description=Enable login service removes /run/nologin
+# Documentation=Watches for an deletes /run/nologin 
+After=network.target sshd.service
+# Wants=sshd-keygen.service
+
+[Service]
+# Type=notify
+# EnvironmentFile=/etc/sysconfig/sshd
+ExecStart=/usr/local/bin/enable-login.sh
+# ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+RestartSec=42s
+
+[Install]
+WantedBy=multi-user.target
