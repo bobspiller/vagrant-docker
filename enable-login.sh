@@ -7,6 +7,7 @@ while /bin/true; do
         echo "Removing: $(ls -l ${NOLOGIN_FILE}) ..."
         rm -f ${NOLOGIN_FILE}
         echo "... done"
+        exit 0
     fi
 
     sleep 5
