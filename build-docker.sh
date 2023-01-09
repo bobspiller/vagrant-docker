@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t centos-7-sd .
+docker build -t centos-vagrant:7 .
