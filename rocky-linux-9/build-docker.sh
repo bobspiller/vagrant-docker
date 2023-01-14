@@ -1,4 +1,4 @@
 #!/bin/bash
 set -x
-TAG=${TAG:-centos-vagrant:7}
+TAG=${TAG:-rockyos-vagrant:9.1}
 docker build -t ${TAG} .
