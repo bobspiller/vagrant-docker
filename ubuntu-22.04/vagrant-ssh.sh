@@ -2,8 +2,8 @@
 
 SCRIPT_DIR=$(cd $(dirname $0) && pwd)
 cd ${SCRIPT_DIR}
-IDENTITY_FILE=$(vagrant ssh-config | grep IdentityFile | awk '{print $2}')
-PORT=${PORT:-2200}
+IDENTITY_FILE=insecure_vagrant_docker_id
+PORT=${PORT:-2222}
 VUSER=${VUSER:-vagrant}
 
 set -x
