@@ -11,6 +11,7 @@ for testing [Ansible](https://docs.ansible.com/) based configuration management 
 
 * CentoOS 7
 * Rocky Linux 9
+* Ubuntu 22.04
 
 ## Vagrant requirements
 
